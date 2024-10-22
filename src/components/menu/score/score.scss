@@ -1,0 +1,9 @@
+.score-component {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .score {
+    color: red;
+  }
+}

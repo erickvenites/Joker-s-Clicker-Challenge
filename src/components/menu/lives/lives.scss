@@ -1,0 +1,36 @@
+.lives-component {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 5px;
+
+  h2 {
+    color: red;
+
+    // A classe blink será aplicada apenas ao número de vidas
+    .lives-value.blink {
+      animation: color-blink 0.5s ease-in-out 0s 2; // 2 ciclos de piscar
+    }
+  }
+  span {
+    color: red;
+  }
+
+  img {
+    width: 40px;
+  }
+}
+
+// Definir a animação para piscar a cor do texto
+@keyframes color-blink {
+  0% {
+    color: red;
+  }
+  50% {
+    color: white;
+  }
+  100% {
+    color: red;
+  }
+}

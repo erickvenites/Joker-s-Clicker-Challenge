@@ -1,0 +1,91 @@
+.modal-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.9),
+    rgba(23, 23, 23, 0.8) /* Vermelho mais transparente */
+  ); /* Gradiente de fundo */
+  width: 400px;
+  height: 400px;
+  border-radius: 15px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.8); /* Sombra mais intensa */
+  color: #fff; /* Cor do texto */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  z-index: 1000; /* Garante que o modal esteja acima da sobreposição */
+  opacity: 0;
+  animation: fadeIn 0.4s forwards;
+
+  .modal-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #ffcc00; /* Cor amarela para o título */
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Sombra de texto para destaque */
+    }
+
+    img {
+      width: 200px; /* Ajuste do tamanho da imagem */
+      height: auto;
+      margin: 1rem 0; /* Espaçamento em cima e embaixo da imagem */
+      border-radius: 10px; /* Bordas arredondadas */
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5); /* Sombra para a imagem */
+    }
+
+    button {
+      margin-top: 1rem;
+      padding: 0.5rem 1rem; /* Espaçamento interno do botão */
+      font-size: 1rem;
+      color: #fff; /* Cor do texto do botão */
+      background-color: #ff0000; /* Cor de fundo do botão vermelha */
+      border: none;
+      border-radius: 5px; /* Bordas arredondadas do botão */
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.2s; /* Efeitos de transição */
+
+      &:hover {
+        background-color: #cc0000; /* Cor ao passar o mouse */
+        transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
+      }
+
+      &:active {
+        transform: scale(0.95); /* Efeito de redução ao clicar */
+      }
+    }
+  }
+}
+
+/* Estilo da sobreposição escura */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro com transparência */
+  z-index: 999; /* Certifique-se de que a sobreposição está acima de outros elementos */
+}
+
+/* Animação para suavizar a entrada do modal */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -55%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}

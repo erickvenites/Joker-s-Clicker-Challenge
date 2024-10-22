@@ -1,0 +1,124 @@
+.start-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url("/assets/background.jpg"); // Caminho da imagem de fundo
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+
+  // Efeito de parallax no fundo
+  &:hover {
+    background-position: calc(50% + 2%) calc(50% + 2%);
+  }
+
+  &-content {
+    animation: fadeIn 2s ease-out;
+  }
+
+  &-title {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    color: #ff0000; // Título em vermelho
+    animation: titleAnimation 3s ease-in-out infinite;
+  }
+
+  &-description {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    max-width: 600px;
+    line-height: 1.5;
+    color: #ccc; // Descrição em cinza claro
+  }
+
+  &-highscore {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: gold;
+    font-weight: bold;
+  }
+
+  &-buttons {
+    display: flex;
+    flex-direction: column; // Organiza os botões em coluna
+    align-items: center; // Centraliza os botões
+    gap: 10px; // Espaço entre os botões
+  }
+
+  &-button {
+    font-size: 1.5rem;
+    padding: 15px 30px;
+    margin: 10px 0;
+    background-color: black;
+    color: red;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    animation: pulse 1.5s infinite;
+
+    &:hover {
+      background-color: darkred;
+      transform: scale(1.1); // Animação de zoom ao passar o mouse
+    }
+  }
+
+  .credits-button {
+    background-color: #880000; // Cor diferente para o botão de créditos
+
+    &:hover {
+      background-color: #aa0000;
+      transform: scale(1.1);
+    }
+  }
+
+  &-footer {
+    position: absolute;
+    bottom: 20px;
+    font-size: 1.2rem;
+    color: #ccc;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+  }
+
+  // Animação de fade-in
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  // Animação de pulsação nos botões
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  // Animação no título
+  @keyframes titleAnimation {
+    0% {
+      text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    }
+    50% {
+      text-shadow: 4px 4px 20px rgba(255, 0, 0, 0.8);
+    }
+    100% {
+      text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    }
+  }
+}
